@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img class="icono" src="assets/icon/icono_chat.png" alt="" />
+
+  <ion-item>
+    <ion-label position="floating">Correo electronico</ion-label>
+    <ion-input [(ngModel)]="email" type="text" name="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Confirmar contraseña</ion-label>
+    <ion-input [(ngModel)]="confirmationPassword" type="password" name="password"></ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-button color="secondary" (click)="OnSubmitRegister()" expand="block">Registrarse</ion-button>
+
+  <br>
+
+  <p class="ion-text-center" [routerLink]="['/login']" routerLinkActive="router-link-active" >Iniciar sesión</p>
+
+</ion-content>

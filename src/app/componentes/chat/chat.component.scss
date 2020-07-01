@@ -1,5 +1,17 @@
-ion-content{
+ion-content.dark{
 
    --background: #cccccc; 
+
+}
+.icono{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 40%;
+}
+
+ion-card{
+
+   --background: #ffffff
 
 }

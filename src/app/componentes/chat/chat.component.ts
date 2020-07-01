@@ -3,17 +3,18 @@ import { NavParams, ModalController } from "@ionic/angular";
 import { message } from "../../models/message";
 import { ChatsService } from "../../servicios/chats.service";
 
-
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss'],
 })
+
 export class ChatComponent implements OnInit {
 
-  public mensajes = [];
   public msg: message;
   public chat: any;
+
+  public mensajeTextArea: string;
 
   public room: any;
 
@@ -40,9 +41,16 @@ export class ChatComponent implements OnInit {
 
   sendMessage() {
 
-    this.mensajes.push(this.msg.content)
-    console.log(this.mensajes)
-    this.msg.content = "";
+    const message: message = {
+
+      content: this.mensajeTextArea,
+      type: 'text',
+      date: new Date()
+
+    }
+
+    this.chatService.sendMsgToFirebase(message, this.chat.id);
+    //this.mensaje = "";
 
   }
 

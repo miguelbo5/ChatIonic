@@ -21,7 +21,7 @@ export class AuthService {
     });
   }
 
-  logout(){
+  logout() {
 
     this.AngFireAuth.signOut().then(() => {
 
@@ -29,6 +29,17 @@ export class AuthService {
 
     })
 
+  }
+
+  createAccount(email: string, password: string) {
+
+    return new Promise((resolver, reject) => {
+
+      this.AngFireAuth.createUserWithEmailAndPassword(email, password).then(res => {
+
+      }).catch(err => reject(err));
+
+    });
 
   }
 

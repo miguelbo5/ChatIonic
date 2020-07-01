@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./componentes/login/login.module').then( m => m.LoginPageModule),
     canActivate : [NoLoginGuard]
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./componentes/registro/registro.module').then( m => m.RegistroPageModule), canActivate: [NoLoginGuard]
+  },
 ];
 
 @NgModule({
